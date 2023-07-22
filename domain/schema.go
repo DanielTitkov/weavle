@@ -1,6 +1,10 @@
 package domain
 
-import "github.com/google/uuid"
+import (
+	"time"
+
+	"github.com/google/uuid"
+)
 
 type Story struct {
 	ID        uuid.UUID
@@ -19,3 +23,21 @@ type User struct {
 	ID        uuid.UUID
 	IPAddress string
 }
+
+// system types
+type (
+	SystemSummary struct {
+		ID            int
+		Users         int
+		Tests         int
+		FinishedTakes int
+		Responses     int
+		CreateTime    time.Time
+	}
+	Event struct {
+		Name      string
+		StartTime time.Time
+		EndTime   time.Time
+		Elapsed   time.Duration
+	}
+)

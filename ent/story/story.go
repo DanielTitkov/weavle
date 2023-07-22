@@ -70,8 +70,9 @@ const DefaultStatus = StatusOpen
 
 // Status values.
 const (
-	StatusOpen   Status = "open"
-	StatusClosed Status = "closed"
+	StatusOpen    Status = "open"
+	StatusClosed  Status = "closed"
+	StatusWaiting Status = "waiting"
 )
 
 func (s Status) String() string {
@@ -81,7 +82,7 @@ func (s Status) String() string {
 // StatusValidator is a validator for the "status" field enum values. It is called by the builders before save.
 func StatusValidator(s Status) error {
 	switch s {
-	case StatusOpen, StatusClosed:
+	case StatusOpen, StatusClosed, StatusWaiting:
 		return nil
 	default:
 		return fmt.Errorf("story: invalid enum value for status field: %q", s)

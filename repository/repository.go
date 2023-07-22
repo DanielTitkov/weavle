@@ -6,8 +6,8 @@ import (
 	"github.com/DanielTitkov/weavle/domain"
 	"github.com/DanielTitkov/weavle/ent"
 	"github.com/DanielTitkov/weavle/ent/story"
+	"github.com/DanielTitkov/weavle/logger"
 	"github.com/google/uuid"
-	"github.com/nats-io/nats-server/v2/logger"
 )
 
 type Repository struct {

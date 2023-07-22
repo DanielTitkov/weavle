@@ -33,7 +33,7 @@ var (
 	// StoriesColumns holds the columns for the "stories" table.
 	StoriesColumns = []*schema.Column{
 		{Name: "id", Type: field.TypeUUID},
-		{Name: "status", Type: field.TypeEnum, Enums: []string{"open", "closed"}, Default: "open"},
+		{Name: "status", Type: field.TypeEnum, Enums: []string{"open", "closed", "waiting"}, Default: "open"},
 		{Name: "created_at", Type: field.TypeTime},
 		{Name: "updated_at", Type: field.TypeTime},
 	}

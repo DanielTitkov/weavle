@@ -17,7 +17,7 @@ type Story struct {
 func (Story) Fields() []ent.Field {
 	return []ent.Field{
 		field.UUID("id", uuid.UUID{}).Default(uuid.New),
-		field.Enum("status").Values("open", "closed").Default("open"),
+		field.Enum("status").Values("open", "closed", "waiting").Default("open"),
 		field.Time("created_at").Default(time.Now),
 		field.Time("updated_at").UpdateDefault(time.Now),
 	}
