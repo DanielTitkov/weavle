@@ -3,8 +3,8 @@ package usecase
 import (
 	"context"
 
-	"github.com/DanielTitkov/weavle/domain"
-	"github.com/DanielTitkov/weavle/repository"
+	"github.com/DanielTitkov/weavle/internal/domain"
+	"github.com/DanielTitkov/weavle/internal/repository"
 )
 
 type StoryUsecase struct {

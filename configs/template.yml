@@ -1,0 +1,54 @@
+# template to substitute with actual values
+env: deploy
+db:
+  uri: "host={{db_host}} port={{db_port}} user={{db_user}} dbname={{db_name}} password={{db_password}} sslmode=require"
+  driver: postgres
+server:
+  port: 80
+  host: "0.0.0.0"
+  domain: {{domain}}
+app:
+  systemSummarySchedule: "30 */3 * * *"
+  systemSummaryTimeout: 15000 # milliseconds
+  updateNormsSchedule: "35 */3 * * *"
+  updateNormsTimeout: 55000 # milliseconds
+  updateMarksSchedule: "50 */3 * * *"
+  updateMarksTimeout: 55000 # milliseconds
+  updateDurationsSchedule: "55 */3 * * *"
+  updateDurationsTimeout: 55000
+  defaultTimeLayout: "2006-01-02"
+  version: {{version}}
+debug:
+  logDBQueries: false
+auth:
+  exp: 259200 # seconds
+  secret: {{secret_key}}
+  google:
+    client: {{google_auth_client}}
+    secret: {{google_auth_secret}}
+    callback: {{google_auth_callback}}
+  github:
+    client: {{github_auth_client}}
+    secret: {{github_auth_secret}}
+    callback: {{github_auth_callback}}
+  twitter:
+    client: {{twitter_auth_client}}
+    secret: {{twitter_auth_secret}}
+    callback: {{twitter_auth_callback}}
+data:
+  presets:
+    testPresetsPaths: 
+      - ./data/presets/test.tipi.yaml
+      - ./data/presets/test.hexaco.yaml
+      - ./data/presets/test.fipi.yaml
+      - ./data/presets/test.riasec-personality-wisc.yaml
+      - ./data/presets/test.riasec-activity-wisc.yaml
+      - ./data/presets/test.riasec-combined-wisc.yaml
+      - ./data/presets/test.political-compass.yaml
+      # - ./data/presets/test.extro.yaml
+    tagPresetsPaths:
+      - ./data/presets/tags.yaml
+external:
+  telegram:
+    telegramTo: {{telegram_to}}
+    telegramToken: {{telegram_token}}

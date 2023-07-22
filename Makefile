@@ -21,6 +21,10 @@ endef
 run: gen
 	go run cmd/$(NAME)/main.go ${DEV_CONFIG_PATH}
 
-@PHONY: gen
+.PHONY: gen
 gen: 
-	go generate ./ent
+	go generate ./internal/ent
+
+.PHONY: db
+db:
+	cd deployments/dev && docker-compose up -d --force-recreate --build --remove-orphans --always-recreate-deps --renew-anon-volumes

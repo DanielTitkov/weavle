@@ -7,12 +7,14 @@ import (
 	"log"
 	"os"
 
-	"github.com/DanielTitkov/weavle/app"
-	"github.com/DanielTitkov/weavle/configs"
-	"github.com/DanielTitkov/weavle/ent"
-	"github.com/DanielTitkov/weavle/logger"
-	"github.com/DanielTitkov/weavle/prepare"
-	"github.com/DanielTitkov/weavle/repository"
+	"github.com/DanielTitkov/weavle/internal/app"
+	"github.com/DanielTitkov/weavle/internal/configs"
+	"github.com/DanielTitkov/weavle/internal/ent"
+	"github.com/DanielTitkov/weavle/internal/logger"
+	"github.com/DanielTitkov/weavle/internal/prepare"
+	"github.com/DanielTitkov/weavle/internal/repository"
+
+	_ "github.com/lib/pq"
 )
 
 func main() {

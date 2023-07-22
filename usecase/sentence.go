@@ -1,6 +1,6 @@
 package usecase
 
-import "github.com/DanielTitkov/weavle/repository"
+import "github.com/DanielTitkov/weavle/internal/repository"
 
 type SentenceUsecase struct {
 	repo repository.Repository

@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: test
+      POSTGRES_DB: weavle
+    volumes:
+      - weavle-database-data:/var/lib/postgresql/data/
+    ports:
+      - "6432:5432"
+
+volumes:
+  weavle-database-data:
